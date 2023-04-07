@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBORG</title>
+  
+  <!-- Remix Icon Link -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Slick Slider Link -->
+
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+          
+  <!-- Main Stylesheet Link -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <div class="header-section">
+        <div class="header-left">
+          <div class="logo">
+          <img src="images/logo.png" alt="">
+          </div>
+          <div class="search-wrapper">
+            <form action="#" class="search">
+              <input type="text" placeholder= "Type Something"><i class="ri-search-line"></i>
+            </form>
+          </div>
+        </div>
+        <div class="gnb">
+        <ul>
+          <li class="home"><a href="#">Home</a></li>
+          <li><a href="#">Browse</a></li>
+          <li><a href="#">Details</a></li>
+          <li><a href="#">Streams</a></li>
+          <li class="user"><a class="common-btn" href="#">Profile <img src="images/profile.jpg" alt=""></a></li>
+        </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="wrapper">
+    <div class="container">
+      <!-- Landing Section -->
+      <section class="landing-section">
+        <div class="landing-video">
+          <video loop autoplay muted src="images/vid1.mp4"></video>
+        </div>
+        <div class="landing-text">
+          <p>Welcome To Cyborg</p>
+          <h2><span>BROWSE</span> OUR POPULAR<br> CONTENTS HERE</h2>
+          <a href="#" class="common-btn">지금 감상하기</a>
+        </div>
+      </section>
+
+      <!-- Most Popular Slider Section -->
+      <section class="popular-section section">
+        <h2><span>Most Popular</span> Right Now</h2>
+        
+        <div class="slider">
+          <div class="slider-wrapper">
+            <i class="ri-arrow-left-s-line prev"></i>
+            <i class="ri-arrow-right-s-line next"></i>
+            <div class="item">
+              <div class="item-image">
+                <div class="hover">
+                  <a href="#"><i class="ri-play-fill"></i>Play Now</a>
+                  <a href="#"><i class="ri-share-box-fill"></i>Share</a>
+                </div>
+                <img src="images/poster1.jpg" alt="slamdunk">
+              </div>
+              <div class="item-info">
+                <h4>Slam Dunk</h4>
+                <div class="rate">
+                  <i class="ri-star-fill"><span>4.8</span></i>
+                  <i class="ri-eye-fill"><span>2.3m</span></i>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-image">
+                <div class="hover">
+                  <a href="#"><i class="ri-play-fill"></i>Play Now</a>
+                  <a href="#"><i class="ri-share-box-fill"></i>Share</a>
+                </div>
+                <img src="images/poster2.jpeg" alt="coco">
+              </div>
+              <div class="item-info">
+                <h4>COCO</h4>
+                <div class="rate">
+                  <i class="ri-star-fill"><span>4.8</span></i>
+                  <i class="ri-eye-fill"><span>2.3m</span></i>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-image">
+                <div class="hover">
+                  <a href="#"><i class="ri-play-fill"></i>Play Now</a>
+                  <a href="#"><i class="ri-share-box-fill"></i>Share</a>
+                </div>
+                <img src="images/poster3.jpeg" alt="eeall">
+              </div>
+              <div class="item-info">
+                <h4>Everything Everywhere All At Once</h4>
+                <div class="rate">
+                  <i class="ri-star-fill"><span>4.8</span></i>
+                  <i class="ri-eye-fill"><span>2.3m</span></i>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-image">
+                <div class="hover">
+                  <a href="#"><i class="ri-play-fill"></i>Play Now</a>
+                  <a href="#"><i class="ri-share-box-fill"></i>Share</a>
+                </div>
+                <img src="images/poster4.webp" alt="eeall">
+              </div>
+              <div class="item-info">
+                <h4>Rocks</h4>
+                <div class="rate">
+                  <i class="ri-star-fill"><span>4.8</span></i>
+                  <i class="ri-eye-fill"><span>2.3m</span></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="more-btn"><a href="#" class="common-btn">View More</a></div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    $('.slider-wrapper').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      nextArrow:$('.next'),
+      prevArrow:$('.prev'),
+    });
+  </script>
+
+
+
+
+</body>
+</html>

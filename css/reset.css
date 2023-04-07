@@ -1,0 +1,12 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+
+/* Reset Style */
+html{scroll-behavior: smooth;}
+body{font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 16px; background-color: #1f2122;}
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ol, ul{list-style: none;}
+a{text-decoration: none; color: black;}
+img{display: block;}
+em, strong, i, b{font-style: normal; font-weight: normal;}
+button, input, textarea{border-style: none; outline: 0; background: #27292a; _font-family: 'Inter', 'Noto Sans KR', sans-serif;}
