@@ -4,6 +4,8 @@
 .section{margin-top: 60px; background: #1f2122; border-radius: 23px; padding: 30px;}
 .common-btn{width: fit-content; padding: 12px 30px; height: 46px; border-radius: 23px; display: flex; align-items: center; text-align: center; background: #e75e8d; color: #fff; font-size: 14px; transition: all .3s;}
 .common-btn:hover{background: #fff; color: #e75e8d;}
+.section-title h2{font-size: 34px; margin-bottom: 30px; color: #e75e8d;}
+.section-title h2 span{text-decoration: underline; color: #fff;}
 
 
 /* header section */
@@ -36,8 +38,6 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 .landing-section .landing-text h2 span{color: #e75e8d;}
 
 /* most popular slider section */
-.popular-section h2{font-size: 34px; margin-bottom: 30px; color: #e75e8d;}
-.popular-section h2 span{text-decoration: underline; color: #fff;}
 .slider .slider-wrapper{width: 100%; margin: auto; position: relative;}
 .slider .slider-wrapper .next{position: absolute; top: 50%; transform: translateY(-50%); right: 30px; font-size: 2em; color: #fff; cursor: pointer; z-index: 99;}
 .slider .slider-wrapper .prev{position: absolute; top: 50%; transform: translateY(-50%); left: 30px; font-size: 2em; color: #fff; cursor: pointer; z-index: 99;}
@@ -57,3 +57,19 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 
 
 .more-btn{width: 100%; display: flex; justify-content: center; margin: 0 0 -53px;}
+
+/* rating library section */
+.rating-wrapper{width: 100%;}
+.rating-item{width: 100%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #27292a; margin-bottom: 20px; padding-bottom: 20px;}
+.rating-item .poster{width: 80px; height: 110px; overflow: hidden; object-fit: cover;}
+.rating-item .poster img{width: 100%;}
+.rating-item li{display: block;}
+.rating-item li h4{color: #fff; font-size: 15px;}
+.rating-item li span{color: #666; font-size: 14px;}
+.rating-item li .ri-star-fill{color: #666;}
+.rating-item li .ri-star-fill.active{color: yellow;}
+
+/* footer section */
+footer p{text-align: center; padding: 30px 0; color: #fff; font-weight: 200; font-size: 15px; line-height: 30px;}
+footer a{color: #fff; transition: all .3s;}
+footer a:hover{color: #e75e8d;}
