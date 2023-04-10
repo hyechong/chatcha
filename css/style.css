@@ -38,29 +38,31 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 .landing-section .landing-text h2 span{color: #e75e8d;}
 
 /* most popular slider section */
-.slider .slider-wrapper{width: 100%; margin: auto; position: relative;}
-.slider .slider-wrapper .next{position: absolute; top: 50%; transform: translateY(-50%); right: 30px; font-size: 2em; color: #fff; cursor: pointer; z-index: 99;}
-.slider .slider-wrapper .prev{position: absolute; top: 50%; transform: translateY(-50%); left: 30px; font-size: 2em; color: #fff; cursor: pointer; z-index: 99;}
-.slider .slider-wrapper .item{width: 30%; height: 75vh; margin: 0 10px 30px; border-radius: 23px; object-fit: cover; overflow: hidden; padding: 30px 15px; background: #27292a;}
+.slider{position: relative;}
+.slider .slider-wrapper{width: 100%; height: auto; margin: auto; position: relative;}
+.slider .next{position: absolute; top: -70px; right: 30px; font-size: 2em; cursor: pointer; z-index: 99; padding: 0 8px;}
+.slider .prev{position: absolute; top: -70px; right: 90px; font-size: 2em; cursor: pointer; z-index: 99; padding: 0 8px;}
+.slider .slider-wrapper .item{width: 30%; height: auto; margin: 0 10px 30px; border-radius: 23px; object-fit: cover; overflow: hidden; padding: 30px 15px; background: #27292a;}
 .slider .slider-wrapper .item .item-image{position: relative; width: 100%; height: 85%; border-radius: 23px; overflow: hidden; object-fit: cover;}
-.slider .slider-wrapper .item .item-image img{width: 100%;}
+.slider .slider-wrapper .item .item-image img{width: 100%;  transition: all .3s;}
 .slider .slider-wrapper .item .item-info{ padding: 20px; line-height: 30px; display: flex; justify-content: space-between;}
 .slider .slider-wrapper .item .item-info h4{font-size: 15px; color: #fff;}
 .slider .slider-wrapper .item .item-info .rate i span{color: #fff;}
 .slider .slider-wrapper .item .item-info .rate .ri-star-fill{color: yellow;}
 .slider .slider-wrapper .item .item-info .rate .ri-eye-fill{color: #e75e8d;}
 .slider .slider-wrapper .item .item-info .rate{display: flex; flex-direction: column; align-items: flex-end; justify-content: center;}
-.slider .slider-wrapper .item .item-image .hover{position: absolute; width:100%; height: 100%; display: flex; flex-direction:column; gap: 10px; align-items: center; justify-content: center; background: #27292a; opacity: 0;}
-.slider .slider-wrapper .item .item-image .hover a{color: #fff; font-size: 20px;}
-.slider .slider-wrapper .item .item-image:hover .hover{opacity: .5;}
-.slider .slider-wrapper .item .item-image .hover a:hover{opacity: 1;}
+.slider .slider-wrapper .item .item-image .hover{position: absolute; width:100%; height: 100%; display: flex; flex-direction:column; gap: 10px; align-items: center; justify-content: center; opacity: 0; z-index: 999;}
+.slider .slider-wrapper .item .item-image .hover a{color: #fff; font-size: 20px; font-weight: 500;}
+.slider .slider-wrapper .item .item-image:hover img{filter: blur(1px); scale: 1.2; opacity: .5;}
+.slider .slider-wrapper .item .item-image:hover .hover{opacity: 1;}
+.slider .slider-wrapper .item .item-image .hover a:hover{color: #e75e8d;}
 
 
 .more-btn{width: 100%; display: flex; justify-content: center; margin: 0 0 -53px;}
 
 /* rating library section */
 .rating-wrapper{width: 100%;}
-.rating-item{width: 100%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #27292a; margin-bottom: 20px; padding-bottom: 20px;}
+.rating-item{width: 100%; height: auto; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #27292a; margin-bottom: 20px; padding-bottom: 20px;}
 .rating-item .poster{width: 80px; height: 110px; overflow: hidden; object-fit: cover;}
 .rating-item .poster img{width: 100%;}
 .rating-item li{display: block;}
@@ -73,3 +75,6 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 footer p{text-align: center; padding: 30px 0; color: #fff; font-weight: 200; font-size: 15px; line-height: 30px;}
 footer a{color: #fff; transition: all .3s;}
 footer a:hover{color: #e75e8d;}
+
+/* top button style */
+.top button{color: #fff;display: flex; align-items: center; text-align: center; position: fixed; right: 30px; bottom: 30px; font-size: 30px; padding: 0 8px;}

@@ -1,5 +1,4 @@
-popular section image hover 했을때 a 안흐려지게 하기
+popular section image hover 했을때 a 안흐려지게 하기//
 맨위로 버튼 만들기
-slider next, prev 버튼 어디에?
-now playing section만들기
-footer 만들기 
+slider next, prev 버튼 어디에?//
+footer 만들기 //

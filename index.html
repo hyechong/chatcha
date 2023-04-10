@@ -24,7 +24,7 @@
 
   <div class="wrapper">
     <!-- Header -->
-    <header>
+    <header id="header">
       <div class="header-section">
         <div class="header-left">
           <div class="logo">
@@ -59,7 +59,7 @@
         <div class="landing-text">
           <p>Welcome To Cyborg</p>
           <h2><span>BROWSE</span> OUR POPULAR<br> CONTENTS HERE</h2>
-          <a href="#" class="common-btn">지금 감상하기</a>
+          <a href="#" class="common-btn">Browse Now</a>
         </div>
       </section>
 
@@ -70,14 +70,14 @@
         </div>
         
         <div class="slider">
+          <i class="ri-arrow-left-s-line prev common-btn"></i>
+          <i class="ri-arrow-right-s-line next common-btn"></i>
           <div class="slider-wrapper">
-            <i class="ri-arrow-left-s-line prev"></i>
-            <i class="ri-arrow-right-s-line next"></i>
             <div class="item">
               <div class="item-image">
                 <div class="hover">
                   <a href="#"><i class="ri-play-fill"></i>Play Now</a>
-                  <a href="#"><i class="ri-share-box-fill"></i>Share</a>
+                  <a href="#"><i class="ri-share-fill"></i>Share</a>
                 </div>
                 <img src="images/poster1.jpg" alt="slamdunk">
               </div>
@@ -93,7 +93,7 @@
               <div class="item-image">
                 <div class="hover">
                   <a href="#"><i class="ri-play-fill"></i>Play Now</a>
-                  <a href="#"><i class="ri-share-box-fill"></i>Share</a>
+                  <a href="#"><i class="ri-share-fill"></i>Share</a>
                 </div>
                 <img src="images/poster2.jpeg" alt="coco">
               </div>
@@ -109,7 +109,7 @@
               <div class="item-image">
                 <div class="hover">
                   <a href="#"><i class="ri-play-fill"></i>Play Now</a>
-                  <a href="#"><i class="ri-share-box-fill"></i>Share</a>
+                  <a href="#"><i class="ri-share-fill"></i></i>Share</a>
                 </div>
                 <img src="images/poster3.jpeg" alt="eeall">
               </div>
@@ -124,10 +124,10 @@
             <div class="item">
               <div class="item-image">
                 <div class="hover">
-                  <a href="#"><i class="ri-play-fill"></i>Play Now</a>
-                  <a href="#"><i class="ri-share-box-fill"></i>Share</a>
+                  <a href="#"><i class="ri-play-fill"></i>&nbsp&nbsp Play Now</a>
+                  <a href="#"><i class="ri-share-fill"></i>&nbsp Share</a>
                 </div>
-                <img src="images/poster4.webp" alt="eeall">
+                <img src="images/poster4.jpg" alt="eeall">
               </div>
               <div class="item-info">
                 <h4>Rocks</h4>
@@ -166,7 +166,7 @@
             </li>
           </ul>
           <ul class="rating-item">
-            <li class="poster"><img src="images/poster4.webp" alt=""></li>
+            <li class="poster"><img src="images/poster4.jpg" alt=""></li>
             <li class="movie-info"><h4>Rocks</h4> <span>2022, 2h 19m</span></li>
             <li class="directors"><h4>Directors</h4><span>Daniel Kwan, Daniel Scheinert</span></li>
             <li class="actors"><h4>Actors</h4><span>Michelle Yeoh, Stephanie Hsu</span></li>
@@ -188,6 +188,10 @@
     </footer>
   </div>
 
+  <!-- Top Button -->
+  <div class="top">
+    <button class="common-btn"><i class="ri-arrow-up-s-line"></i></button>
+  </div>
   <script>
     $('.slider-wrapper').slick({
       slidesToShow: 3,
@@ -199,7 +203,7 @@
     });
   </script>
 
-
+  <script src="custom.js"></script>
 
 
 </body>
