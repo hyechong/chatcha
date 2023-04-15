@@ -17,3 +17,12 @@ toTop.addEventListener('click', () => {
     behavior: 'smooth',
   });
 });
+
+//bookmark button
+const bookmarkBtns = document.querySelectorAll('.bookmark');
+
+bookmarkBtns.forEach(function (btns) {
+  btns.addEventListener('click', function () {
+    btns.classList.toggle('active');
+  });
+});
