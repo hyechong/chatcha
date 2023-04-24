@@ -30,8 +30,9 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 
 /* landing section */
 .landing-section{position: relative;}
-.landing-section .landing-video{width: 100%; height: auto; display: flex;}
-.landing-section video{width: 100%; border-radius: 23px;}
+.landing-section .landing-image{width: 100%; height: auto; display: flex;}
+/* .landing-section video{width: 100%; border-radius: 23px;} */
+.landing-section img{width: 100%; border-radius: 23px;}
 .landing-section .landing-text{position: absolute; left: 60px; top:50%; transform: translateY(-50%);}
 .landing-section .landing-text p{font-size: 20px; color: #fff; font-weight: 400; margin-bottom: 25px;}
 .landing-section .landing-text h2{font-size: 45px; margin-bottom: 25px; color: #fff;}
