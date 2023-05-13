@@ -30,8 +30,7 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 
 /* landing section */
 .landing-section{position: relative;}
-.landing-section .landing-image{width: 100%; height: auto; display: flex;}
-/* .landing-section video{width: 100%; border-radius: 23px;} */
+.landing-section .landing-image{width: 100%; height: 500px; display: flex;}
 .landing-section img{width: 100%; border-radius: 23px;}
 .landing-section .landing-text{position: absolute; left: 60px; top:50%; transform: translateY(-50%);}
 .landing-section .landing-text p{font-size: 20px; color: #fff; font-weight: 400; margin-bottom: 25px;}
@@ -66,12 +65,12 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 
 /* rating library section */
 .rating-wrapper{width: 100%;}
-.rating-item{width: 100%; height: auto; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #27292a; margin-bottom: 20px; padding-bottom: 20px;}
+.rating-item{width: 100%; height: auto; display: grid; grid-template-columns: 1fr 2fr 2fr 2fr 1fr; border-bottom: 1px solid #27292a; margin-bottom: 20px; padding-bottom: 20px; align-items: center;}
 .rating-item .poster{width: 80px; height: 110px; overflow: hidden; object-fit: cover;}
 .rating-item .poster img{width: 100%;}
 .rating-item li{display: block;}
 .rating-item li h4{color: #fff; font-size: 15px;}
-.rating-item li span{color: #666; font-size: 14px;}
+.rating-item li span{color: #666; font-size: 14px; display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: 1; -webkit-box-orient: vertical; word-break: keep-all; overflow: hidden;}
 .rating-item li .ri-star-fill{color: #666;}
 .rating-item li .ri-star-fill.active{color: yellow;}
 
