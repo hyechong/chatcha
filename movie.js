@@ -1,13 +1,35 @@
-const API_KEY = 'bb7689db4fddee63af4a1305d8ed162d';
+const API_KEY = 'api_key=bb7689db4fddee63af4a1305d8ed162d';
+const BASE_URL = 'https://api.themoviedb.org/3';
+const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+const getImageUrl = 'https://image.tmdb.org/t/p/original';
+// const searchUrl = BASE_URL + '/search/movies?' + API_KEY;
+
+// function getMovieDatas(url) {
+//   fetch(url)
+//     .then((response) => response.json())
+//     .then((json) => {});
+// }
+
+// getMovieDatas(API_URL);
+// // Search
+// const form = document.querySelector('.search-form');
+// const search = document.querySelector('.search');
+
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault();
+
+//   const searchTerm = search.value;
+
+//   if (searchTerm) {
+//     getMovieDatas(searchUrl + '&query=' + searchTerm);
+//   }
+// });
 
 // Landing Section
 const landingImg = document.querySelector('.landing-image');
-const getImageUrl = 'https://image.tmdb.org/t/p/original';
 
 const getLandingImg = async () => {
-  fetch(
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=bb7689db4fddee63af4a1305d8ed162d'
-  )
+  fetch(API_URL)
     .then((response) => response.json())
     .then((json) => {
       let bgImg;
@@ -27,9 +49,7 @@ getLandingImg();
 const popularSlider = document.querySelector('.slider-wrapper');
 
 const getpopularImg = async () => {
-  await fetch(
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=bb7689db4fddee63af4a1305d8ed162d'
-  )
+  await fetch(API_URL)
     .then((response) => response.json())
     .then((json) => {
       let movieData;
@@ -39,11 +59,7 @@ const getpopularImg = async () => {
        <div class="item">
          <div class="item-image">
            <div class="hover">
-             <button class="bookmark">
-               <i class="ri-heart-fill"></i>
-             </button>
-             <a href="#"><i class="ri-play-fill"></i>&nbsp Play Now</a>
-             <a href="#"><i class="ri-share-fill"></i>&nbsp Share</a>
+            <a href="#" class="common-btn detail-btn"><i class="ri-play-fill"></i>&nbsp Trailer</a>
            </div>
            <img src="${getImageUrl + d.poster_path}" alt="">
          </div>
@@ -51,7 +67,7 @@ const getpopularImg = async () => {
            <h4>${d.title}</h4>
            <div class="rate">
              <i class="ri-star-fill"><span>${d.vote_average}</span></i>
-             <i class="ri-eye-fill"><span>${d.vote_count}</span></i>
+             <i class="ri-eye-fill"><span>${Math.floor(d.popularity)}</span></i>
            </div>
          </div>
        </div>
@@ -80,16 +96,20 @@ function getMovies() {
 const ratingLib = document.querySelector('.rating-wrapper');
 
 const getratingImg = async () => {
-  await fetch('https://yts.mx/api/v2/list_movies.json?limit=3&sort_by=date')
+  await fetch(API_URL)
     .then((response) => response.json())
     .then((json) => {
       let ratingData;
-      json.data.movies.map((d, i) => {
+      json.results.map((d, i) => {
         //console.log(d);
         ratingData = `
        <ul class="rating-item">
-         <li class="poster"><img src="${d.small_cover_image}" alt=""></li>
-         <li class="movie-info"><h4>${d.title}</h4> <span>${d.year},${d.genres}</span></li>
+         <li class="poster"><img src="${
+           getImageUrl + d.poster_path
+         }" alt=""></li>
+         <li class="movie-info"><h4>${d.title}</h4> <span>${d.release_date},${
+          d.genre_ids
+        }</span></li>
          <li class="directors"><h4>Directors</h4><span>Lee Unkrich, Adrian Molina</span></li>
          <li class="actors"><h4>Actors</h4><span>Anthony Gonzalez, Gael Garcia Bernal</span></li>
          <li class="my-rate"><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill"></i>

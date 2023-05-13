@@ -6,7 +6,7 @@
 .common-btn:hover{background: #fff; color: #e75e8d;}
 .section-title h2{font-size: 34px; margin-bottom: 30px; color: #e75e8d;}
 .section-title h2 span{text-decoration: underline; color: #fff;}
-
+.more-btn{width: 100%; display: flex; justify-content: center; margin: 0 0 -53px;}
 
 /* header section */
 header{width: 100%; height: auto; padding: 15px 0 ;}
@@ -51,17 +51,11 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 .slider .slider-wrapper .item .item-info .rate .ri-star-fill{color: yellow;}
 .slider .slider-wrapper .item .item-info .rate .ri-eye-fill{color: #e75e8d;}
 .slider .slider-wrapper .item .item-info .rate{display: flex; flex-direction: column; align-items: flex-end; justify-content: center;}
+.slider .slider-wrapper .item .item-image:hover img{scale: 1.2;}
 .slider .slider-wrapper .item .item-image .hover{position: absolute; width:100%; height: 100%; display: flex; flex-direction:column; gap: 10px; align-items: center; justify-content: center; opacity: 0; z-index: 999;}
-.slider .slider-wrapper .item .item-image .hover .bookmark{position: absolute; top: 20px; right: 25px; font-size: 25px; color: #fff; transition: all .3s; font-weight: 500; background: transparent;}
-.slider .slider-wrapper .item .item-image .hover .bookmark.active{color: #e75e8d; opacity: 1; z-index: 9999;}
-.slider .slider-wrapper .item .item-image .hover a{color: #fff; font-size: 20px; transition: all .3s;}
-.slider .slider-wrapper .item .item-image:hover img{filter: blur(1px); scale: 1.2; opacity: .4;}
-.slider .slider-wrapper .item .item-image:hover .hover{opacity: 1;}
-.slider .slider-wrapper .item .item-image .hover a:hover{color: #e75e8d; scale:1.2; font-weight: 500;}
-.slider .slider-wrapper .item .item-image .hover .bookmark:hover{color: #e75e8d; scale:1.2; font-weight: 600;}
-
-
-.more-btn{width: 100%; display: flex; justify-content: center; margin: 0 0 -53px;}
+.slider .slider-wrapper .item .item-image .hover .detail-btn{background:rgba(0, 0, 0, .8); font-weight: 500; _scale: 0; transition: all .4s;}
+.slider .slider-wrapper .item .item-image:hover .hover{opacity: 1;_animation: slideup 0.5s 1; _animation-fill-mode: forwards; transition: all .4s;}
+/* .slider .slider-wrapper .item .item-image:hover .hover .detail-btn{scale: 1;} */
 
 /* rating library section */
 .rating-wrapper{width: 100%;}

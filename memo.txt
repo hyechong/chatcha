@@ -1,4 +1,9 @@
 popular section image hover 했을때 a 안흐려지게 하기//
-맨위로 버튼 만들기
+맨위로 버튼 만들기//
 slider next, prev 버튼 어디에?//
 footer 만들기 //
+장르 탭 만들기
+인물슬라이드 섹션
+인물상세 페이지 
+회원가입, 로그인
+영화 상세 정보 페이지
