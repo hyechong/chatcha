@@ -39,7 +39,7 @@ const getpopularImg = async () => {
        <div class="item">
          <div class="item-image">
            <div class="hover">
-            <a href="#" class="common-btn detail-btn" id="${
+            <a href="#" class="common-btn trailer-btn" id="${
               d.id
             }"><i class="ri-play-fill"></i>&nbsp Trailer</a>
            </div>
@@ -57,15 +57,15 @@ const getpopularImg = async () => {
         popularSlider.innerHTML += movieData;
       });
       getMovies();
-      displayDetailInfo(json);
+      trailerOverlay(json);
     })
     .catch((error) => console.log(error));
 };
 
 getpopularImg();
 
-function displayDetailInfo(popularJsonData) {
-  const popularData = document.querySelectorAll('.detail-btn');
+function trailerOverlay(popularJsonData) {
+  const popularData = document.querySelectorAll('.trailer-btn');
   // console.log(popularData);
   // console.log(popularJsonData);
   popularData.forEach((data, i) => {
@@ -250,7 +250,7 @@ function getMovieDatas(url) {
 
 const genrePanel = document.querySelector('.genre-items-wrapper');
 function showMovies(data) {
-  genrePanel.innerHTML = '';
+  genrePanel.innerHTML = ''; // 하단에 중복으로 쌓이는 오류 해결
 
   // console.log(data);
   data.forEach((movie) => {
@@ -269,7 +269,7 @@ function showMovies(data) {
       
       <div class="item-image">
         <div class="hover">
-        <a href="#" class="common-btn detail-btn" id="${id}"><i class="ri-play-fill"></i>&nbsp Trailer</a>
+        <a href="#" class="common-btn trailer-btn" id="${id}"><i class="ri-play-fill"></i>&nbsp Trailer</a>
         </div>
         <img src="${getImageUrl + poster_path}" alt="">
       </div>
