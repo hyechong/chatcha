@@ -36,7 +36,7 @@ const getpopularImg = async () => {
         // console.log(d.poster_path);
         // console.log(d);
         movieData = `
-       <div class="item">
+       <div class="item popular-item">
          <div class="item-image">
            <div class="hover">
             <a href="#" class="common-btn trailer-btn" id="${
@@ -81,8 +81,8 @@ function getMovies() {
   $('.slider-wrapper').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    //autoplay: true,
+    //autoplaySpeed: 2000,
     nextArrow: $('.next'),
     prevArrow: $('.prev'),
   });
@@ -102,9 +102,8 @@ const getratingImg = async () => {
          <li class="poster"><img src="${
            getImageUrl + d.poster_path
          }" alt=""></li>
-         <li class="movie-info"><h4>${d.title}</h4> <span>${d.release_date},${
-          d.genre_ids
-        }</span></li>
+         <li class="movie-info"><h4>${d.title}</h4> <span>${d.release_date}
+        </span></li>
          <li class="directors"><h4>Directors</h4><span>Lee Unkrich, Adrian Molina</span></li>
          <li class="actors"><h4>Actors</h4><span>Anthony Gonzalez, Gael Garcia Bernal</span></li>
          <li class="my-rate"><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill"></i>
@@ -118,6 +117,17 @@ const getratingImg = async () => {
 };
 
 getratingImg();
+
+// function showLimitRatings() {
+//   const pr = document.querySelectorAll('.product-frame');
+//   pr.forEach((item) => {
+//     item.style.display = 'none';
+//   });
+
+//   for (let i = 0; i < 3; i++) {
+//     pr[i].style.display = 'block';
+//   }
+// }
 
 const genres = [
   {
@@ -264,7 +274,7 @@ function showMovies(data) {
       genre_ids,
     } = movie;
     const genreItem = document.createElement('div');
-    genreItem.classList.add('item');
+    genreItem.classList.add('item', 'genre-item');
     genreItem.innerHTML = `
       
       <div class="item-image">

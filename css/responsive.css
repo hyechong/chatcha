@@ -1,15 +1,132 @@
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
+  /* Common Style */
+  .item .item-text{line-height: 1.6; padding: 10px;}
   
+  /* Header Section Style */
+  header .gnb ul li{padding: 0 .75rem;}
+  header .logo {padding-right: 1.5rem; margin-right:1.5rem;}
+
+  /* Landing Section Style */
+  .landing-section .landing-text p{margin-bottom: 0;}
+  .landing-section .landing-text h2{font-size: 2.5rem; margin-bottom: .25rem; line-height: 1.25;}
+
+  /* Popular Section Style */
+  .popular-item{height: auto; max-height: 500px;}
+  .slider .slider-wrapper .item{padding: 20px 15px;}
+
+  /* Genre Section Style */
+  .genre-item{height: auto; max-height: 420px;}
 }
 
-@media screen and (max-width: 1100px) {
-  
+@media screen and (max-width: 980px) {
+  /* Common Style */
+  .common-btn{padding: .5rem 1.25rem;}
+  .container{padding: 3rem;}
+  .section-title h2{font-size: 1.875rem;}
+
+  /* Header Section Style */
+  header .logo{border-right: none;}
+  header .search-wrapper {display: none;}
+  header .gnb ul li{display: none;}
+  header .gnb ul li.menu-icon{display: flex; justify-content: center; align-items: center;}
+
+  /* Landing Section Style */
+  .landing-section .landing-text h2{font-size: 1.875rem;}
+
+  /* Popular Section Style */
+  .slider .next, .slider .prev{font-size: 1.75em;}
+
+  /* Rating Section Style */
+  .rating-item .directors, .rating-item .actors{display: none;}
+  .rating-item{grid-template-columns: 1fr 3fr 1fr;}
+
+  /* Genre Section Style */
+  .genre-item{max-height: 450px;}
+  .genre-items-wrapper{grid-template-columns: 1fr 1fr 1fr;}
 }
 
 @media screen and (max-width: 786px) {
+  /* Common Style */
+  body{background-color: #27292a;}
+  .container{padding: 0;}
+  .item .item-text h4{font-weight: 500;}
+  .section{margin-top: 2.5rem;}
+
+  /* Header Section Style */
+  header .logo {width: 180px;}
+  header .gnb ul li.menu-icon a{font-size: 1.5rem;}
+
+  /* Popular Section Style */
+  .slider .next, .slider .prev{left: -999999px;}
+  .slider .slider-wrapper .item{padding: 0;}
+  .slider .slider-wrapper .item .item-text .rate{display: none;}
+  .slider .slider-wrapper .item .item-image{border-radius: 23px 23px 0 0;}
+  .popular-section .item .item-text{padding: 15px 20px;}
+  .popular-section .item .item-text h4{-webkit-line-clamp: 1;}
+}
+
+@media screen and (max-width: 560px) {
+  /* Common Style */
+  .common-btn{padding: .25rem 1rem;}
+  .item{border-radius: 7px;}
+  .item .item-image{border-radius: 7px;}
+  .item .item-text{display: none;}
+  .section-title h2{font-size: 1.5rem;}
+  .wrapper{padding: 0 1.5rem;}
+
+  /* Landing Section Style */
+  .landing-section .landing-text h2{font-size: 1.5rem;}
+  .landing-section .landing-text p{font-size: 1rem;}
+  .landing-section .landing-image{height: 40vh; overflow: hidden; object-fit: cover; border-radius: 23px; justify-content: center;}
+  .landing-section .landing-image img{width: auto;}
+
+  /* Popular Section Style */
+  .slider .slider-wrapper .item .item-image{border-radius: 7px;}
+
+  /* Rating Section Style */
+  .rating-item{grid-template-columns: 1fr 2fr 1fr;}
   
 }
 
-@media screen and (max-width: 480px) {
-  
+@media screen and (max-width: 478px) {
+  /* Common Style */
+  header{padding: 0;}
+  body{background-color: #1f2122;}
+  .container{background-color: #1f2122;}
+  .section{padding: 0; margin-bottom: 4.5rem; margin-top: 1.25rem;}
+  .section-title h2{margin-bottom: 1.25rem;}
+  .wrapper{padding: 0 1rem;}
+  .common-btn{font-size: .75rem;}
+
+  /* Header Section Style */
+  header .logo {width: 150px;}
+
+  /* Landing Section Style */
+  .landing-section{height: 80%;}
+  .landing-section .landing-text{padding: 0 20px;}
+
+  /* Popular Section Style */
+  .slider .slider-wrapper .item{margin: 0 5px 1.25rem;}
+
+  /* Rating Section Style */
+  .rating-item{grid-template-columns: 1fr 1.5fr 1fr;}
+
+  /* Genre Section Style */
+  .genres-btn-wrapper .genres-btn{margin: .125rem;}
+}
+
+@media screen and (max-width: 320px) {
+  /* Common Style */
+  .wrapper{padding: 0 .75rem;}
+  .section-title h2{font-size: 1.25rem;}
+
+
+  /* Landing Section Style */
+  .landing-section .landing-text h2{font-size: 1.25rem;}
+  .landing-section .landing-text{padding: 0 15px;}
+
+  /* Rating Section Style */
+  .rating-item li h4{font-weight: 500;}
+  .rating-item{grid-template-columns: 1fr 1fr 1fr;}
+
 }
