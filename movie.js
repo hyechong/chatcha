@@ -89,13 +89,14 @@ function getMovies() {
 }
 
 const ratingLib = document.querySelector('.rating-wrapper');
+const ratingViewMoreBtn = document.querySelector('.rating-btn');
 
 const getratingImg = async () => {
   await fetch(API_URL)
     .then((response) => response.json())
     .then((json) => {
       let ratingData;
-      json.results.map((d, i) => {
+      json.results.slice(0, 3).map((d, i) => {
         //console.log(d);
         ratingData = `
        <ul class="rating-item">
@@ -117,17 +118,6 @@ const getratingImg = async () => {
 };
 
 getratingImg();
-
-// function showLimitRatings() {
-//   const pr = document.querySelectorAll('.product-frame');
-//   pr.forEach((item) => {
-//     item.style.display = 'none';
-//   });
-
-//   for (let i = 0; i < 3; i++) {
-//     pr[i].style.display = 'block';
-//   }
-// }
 
 const genres = [
   {

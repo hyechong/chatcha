@@ -28,7 +28,6 @@ header .header-section{width:100%; height:70px; display: flex; align-items: cent
 header .header-left{display: flex; align-items: center;}
 header .logo{margin-right: 3.125rem; border-right: 1px solid #27292a; padding-right: 3.125rem;}
 header .logo img {width: 100%;}
-/* header .search-wrapper{width: 202px; height: 46px; display: flex; align-items: center;} */
 header .search-wrapper{position: relative;}
 header .search-wrapper form{display: flex;align-items: center;}
 header .search-wrapper input{height: 46px; border-radius: 23px; color: #666; font-size: 14px; padding: 0px 15px 0px 45px;} 
@@ -37,7 +36,7 @@ header .gnb ul{display: flex; align-items: center; text-align: center;}
 header .gnb ul li{padding: 0 1.25rem;}
 header .gnb ul li.menu-icon{display: none;}
 header .gnb a{color: #666; font-size: 14px; font-weight: 300; transition: all .3s;}
-header .gnb li.menu-icon a{font-size: 1.75rem;}
+header .gnb li.menu-icon a{font-size: 1.75rem; display: flex; align-items: center; color: #e75e8d;}
 header .gnb li.on a{color: #e75e8d;}
 header .gnb ul li:hover a{color: #e75e8d;}
 header .gnb ul li.user{padding-right: 0;}
@@ -45,8 +44,28 @@ header .gnb ul li.user a{background: #27292a; display: flex;align-items: center;
 header .gnb ul li.user img{max-width: 30px; border-radius: 50%; margin-left: 5px; overflow: hidden;}
 header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 
+/* mobile menu section */
+.mobile-overlay{position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.8); z-index: 9999; width: 100%; height: 100vh; transition: all .8s; opacity: 0; visibility: hidden;}
+.mobile-menus{position: absolute; left: -40%; top: 0; width: 40%; height: 100vh; background: #1f2122; padding: 1.5rem; transition: all .4s;}
+.mobile-overlay.on{opacity: 1; visibility: visible;}
+.mobile-overlay.on .mobile-menus{left: 0; transition-delay: .3s;}
+
+.mobile-menus .menu-top{display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem; border-bottom: 1px solid #27292a;}
+.mobile-menus .menu-top .logo-icon img{width: 6.25rem;}
+.mobile-menus .search-wrapper{position: relative;}
+.mobile-menus .search-wrapper form{display: flex;align-items: center;}
+.mobile-menus .search-wrapper input{height: 46px; border-radius: 23px; color: #666; font-size: 14px; padding: 0px 15px 0px 45px;} 
+.mobile-menus .search-wrapper i{position: absolute; color: #666; left: 20px; font-size: 16px; line-height: 0;}
+.mobile-menus .search-form, 
+.mobile-menus .gnb{padding: 1.25rem 0; border-bottom: 1px solid #27292a;}
+.mobile-menus .gnb ul{display: flex; flex-direction: column; row-gap: 1.25rem;}
+.mobile-menus a{color: #666; transition: all .4s;}
+.mobile-menus a:hover{color: #e75e8d;}
+.mobile-menus .close-icon{font-size: 1.875rem; display: flex; align-items: center;}
+
 /* landing section */
 .landing-section{position: relative;}
+.landing-section .container{padding: 0;}
 .landing-section .landing-image{width: 100%; height: auto; display: flex;}
 .landing-section img{width: 100%; border-radius: 23px;}
 .landing-section .landing-text{position: absolute; top:50%; transform: translateY(-50%); padding: 0 30px;}
@@ -85,6 +104,7 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 
 
 /* footer section */
+footer .container {margin-top: 0;}
 footer p{text-align: center; padding: 30px 0; color: #fff; font-weight: 200; font-size: 15px; line-height: 30px;}
 footer a{color: #fff; transition: all .3s;}
 footer a:hover{color: #e75e8d;}

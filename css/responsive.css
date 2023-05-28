@@ -30,6 +30,9 @@
   header .gnb ul li{display: none;}
   header .gnb ul li.menu-icon{display: flex; justify-content: center; align-items: center;}
 
+  /* Mobile Menu Section Style */
+  .mobile-menus{width: 50%;}
+
   /* Landing Section Style */
   .landing-section .landing-text h2{font-size: 1.875rem;}
 
@@ -54,7 +57,9 @@
 
   /* Header Section Style */
   header .logo {width: 180px;}
-  header .gnb ul li.menu-icon a{font-size: 1.5rem;}
+
+  /* Mobile Menu Section Style */
+  .mobile-menus{width: 60%;}
 
   /* Popular Section Style */
   .slider .next, .slider .prev{left: -999999px;}
@@ -73,6 +78,9 @@
   .item .item-text{display: none;}
   .section-title h2{font-size: 1.5rem;}
   .wrapper{padding: 0 1.5rem;}
+
+  /* Mobile Menu Section Style */
+  .mobile-menus{width: 70%;}
 
   /* Landing Section Style */
   .landing-section .landing-text h2{font-size: 1.5rem;}
@@ -101,6 +109,9 @@
   /* Header Section Style */
   header .logo {width: 150px;}
 
+  /* Mobile Menu Section Style */
+  .mobile-menus{width: 80%;}
+
   /* Landing Section Style */
   .landing-section{height: 80%;}
   .landing-section .landing-text{padding: 0 20px;}
@@ -113,6 +124,10 @@
 
   /* Genre Section Style */
   .genres-btn-wrapper .genres-btn{margin: .125rem;}
+  .genres-section.section{margin-bottom: 1.5rem;}
+
+  /* Footer Section Style */
+  footer p{padding: 0 0 1.5rem; font-size: .75rem; line-height: 17px;}
 }
 
 @media screen and (max-width: 320px) {
@@ -120,6 +135,8 @@
   .wrapper{padding: 0 .75rem;}
   .section-title h2{font-size: 1.25rem;}
 
+  /* Mobile Menu Section Style */
+  .mobile-menus{width: 100%;}
 
   /* Landing Section Style */
   .landing-section .landing-text h2{font-size: 1.25rem;}
