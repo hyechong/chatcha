@@ -71,8 +71,89 @@ function trailerOverlay(popularJsonData) {
   popularData.forEach((data, i) => {
     data.addEventListener('click', function (e) {
       e.preventDefault();
-      alert(popularJsonData.results[i].id);
+      // alert(popularJsonData.results[i].id);
+      openTrailerOverlay(data);
     });
+  });
+}
+
+const trailerVideoWrapper = document.querySelector(
+  '.trailer-overlay .video-wrapper'
+);
+const trailerTextWrapper = document.querySelector(
+  '.trailer-overlay .txt-wrapper'
+);
+
+function openTrailerOverlay(data) {
+  let id = data.id;
+  fetch(API_URL)
+    .then((response) => response.json())
+    .then((json) => {
+      let movieInfo;
+      json.results.map((d, i) => {
+        movieInfo = `
+          <div class="movie-info">
+            <h4>${d.title}</h4>
+            <span>${d.release_date}</span>
+          </div>
+          <div class="overview">
+            <p>
+              ${d.overview}
+            </p> 
+          </div>
+        `;
+        trailerTextWrapper.innerHTML = movieInfo;
+      });
+    });
+
+  fetch(BASE_URL + '/movie/' + id + '/videos?' + API_KEY)
+    .then((res) => res.json())
+    .then((videoData) => {
+      console.log(videoData);
+      if (videoData) {
+        document.querySelector('.trailer-overlay').style.opacity = '100%';
+        document.querySelector('.trailer-overlay').style.visibility = 'visible';
+        if (videoData.results.length > 0) {
+          let embed = [];
+          videoData.results.forEach((video) => {
+            let { name, key, site } = video;
+
+            if (site == 'YouTube') {
+              embed.push(`
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              `);
+            }
+          });
+          trailerVideoWrapper.innerHTML = embed.join('');
+          activeSlide = 0;
+          showVideos();
+        } else {
+          trailerVideoWrapper.innerHTML = `<h2 class="no-results">No Results Found</h2>`;
+        }
+      }
+    });
+}
+
+const trailerCloseBtn = document.querySelector('.trailer-overlay .close-icon');
+trailerCloseBtn.addEventListener('click', closeTrailerOverlay);
+
+function closeTrailerOverlay(e) {
+  e.preventDefault();
+  document.querySelector('.trailer-overlay').style.opacity = '0';
+  document.querySelector('.trailer-overlay').style.visibility = 'hidden';
+}
+
+let activeSlide = 0;
+function showVideos() {
+  let embedClasses = document.querySelectorAll('.embed');
+  embedClasses.forEach((embedTag, idx) => {
+    if (activeSlide == idx) {
+      embedTag.classList.add('show');
+      embedTag.classList.remove('hide');
+    } else {
+      embedTag.classList.add('hide');
+      embedTag.classList.remove('show');
+    }
   });
 }
 
@@ -245,6 +326,7 @@ function getMovieDatas(url) {
     .then((response) => response.json())
     .then((data) => {
       showMovies(data.results);
+      trailerOverlay(data);
     });
 }
 
