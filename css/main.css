@@ -3,7 +3,10 @@
 .container{width: 100%; height: auto; padding: 60px; background: #27292a; border-radius: 23px;}
 .section{margin-top: 60px; background: #1f2122; border-radius: 23px; padding: 30px; object-fit: cover;}
 .common-btn{width: fit-content; padding: 12px 30px; height: 46px; border-radius: 23px; display: flex; align-items: center; text-align: center; background: #e75e8d; color: #fff; font-size: 14px; transition: all .3s;}
-.common-btn:hover{background: #fff; color: #e75e8d;}
+
+@media (hover: hover) { /* 모바일 호버효과 제거 */
+  .common-btn:hover{background: #fff; color: #e75e8d;}
+}
 .section-title h2{font-size: 34px; margin-bottom: 30px; color: #e75e8d;}
 .section-title h2 span{text-decoration: underline; color: #fff;}
 .more-btn{width: 100%; display: flex; justify-content: center; margin: 0 0 -53px;}
@@ -23,7 +26,7 @@
 .item .item-image:hover .hover{opacity: 1;_animation: slideup 0.5s 1; _animation-fill-mode: forwards; transition: all .4s;}
 
 /* header section */
-header{width: 100%; height: auto; padding: 15px 0 ;}
+header{width: 100%; height: auto; padding: 15px 0;}
 header .header-section{width:100%; height:70px; display: flex; align-items: center; justify-content: space-between;}
 header .header-left{display: flex; align-items: center;}
 header .logo{margin-right: 3.125rem; border-right: 1px solid #27292a; padding-right: 3.125rem;}
@@ -88,7 +91,6 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 .trailer-overlay{position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.8); z-index: 9999; width: 100%; height: 100%; transition: all .8s; opacity: 0; visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center;}
 .trailer-overlay .close-icon {position: absolute; top: 3rem; right: 5rem; color: #666; font-size: 2rem; transition: all .4s;}
 .trailer-overlay .close-icon:hover {color: #e75e8d;}
-.trailer-overlay .video-wrapper{background: #666;}
 .trailer-overlay .txt-wrapper{margin-top: 15px; text-align: center;}
 .trailer-overlay .txt-wrapper .movie-info h4{font-size: 20px; color: #e75e8d;}
 .trailer-overlay .txt-wrapper .movie-info span{font-size: 14px; color: #666;}
@@ -96,6 +98,10 @@ header .gnb ul li.user:hover a{background: #e75e8d; color: #fff;}
 
 .embed.hide{display: none;}
 .embed.show{display: inline-block;}
+
+.trailer-overlay .close-icon{top: 3rem; right: 5rem;}
+iframe{width:560px; height:315px;}
+.trailer-overlay .txt-wrapper{width: 60.5rem;}
 
 /* rating library section */
 .rating-wrapper{width: 100%;}

@@ -86,41 +86,43 @@ const trailerTextWrapper = document.querySelector(
 
 function openTrailerOverlay(data) {
   let id = data.id;
-  fetch(API_URL)
+  fetch(BASE_URL + '/movie/' + id + '?' + API_KEY)
     .then((response) => response.json())
-    .then((json) => {
+    .then((infoData) => {
       let movieInfo;
-      json.results.map((d, i) => {
-        movieInfo = `
-          <div class="movie-info">
-            <h4>${d.title}</h4>
-            <span>${d.release_date}</span>
-          </div>
-          <div class="overview">
-            <p>
-              ${d.overview}
-            </p> 
-          </div>
-        `;
-        trailerTextWrapper.innerHTML = movieInfo;
-      });
+      // console.log(infoData.title);
+      movieInfo = `
+        <div class="movie-info">
+          <h4>${infoData.title}</h4>
+          <span>${infoData.release_date}</span>
+        </div>
+        <div class="overview">
+          <p>
+            ${infoData.overview}
+          </p>
+        </div>
+      `;
+
+      trailerTextWrapper.innerHTML = movieInfo;
     });
 
-  fetch(BASE_URL + '/movie/' + id + '/videos?' + API_KEY)
+  fetch(BASE_URL + '/movie/' + id + '/videos?' + API_KEY, {
+    mode: 'cors',
+  })
     .then((res) => res.json())
     .then((videoData) => {
-      console.log(videoData);
+      // console.log(videoData);
       if (videoData) {
         document.querySelector('.trailer-overlay').style.opacity = '100%';
         document.querySelector('.trailer-overlay').style.visibility = 'visible';
         if (videoData.results.length > 0) {
           let embed = [];
           videoData.results.forEach((video) => {
-            let { name, key, site } = video;
+            let { name, key, site, type } = video;
 
-            if (site == 'YouTube') {
+            if (site == 'YouTube' && type == 'Trailer') {
               embed.push(`
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               `);
             }
           });
@@ -141,6 +143,7 @@ function closeTrailerOverlay(e) {
   e.preventDefault();
   document.querySelector('.trailer-overlay').style.opacity = '0';
   document.querySelector('.trailer-overlay').style.visibility = 'hidden';
+  trailerVideoWrapper.replaceChildren(); // overlay 꺼도 영상 재생되는 오류 해결
 }
 
 let activeSlide = 0;
@@ -162,8 +165,8 @@ function getMovies() {
   $('.slider-wrapper').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    //autoplay: true,
-    //autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000,
     nextArrow: $('.next'),
     prevArrow: $('.prev'),
   });
@@ -180,18 +183,24 @@ const getratingImg = async () => {
       json.results.slice(0, 3).map((d, i) => {
         //console.log(d);
         ratingData = `
-       <ul class="rating-item">
-         <li class="poster"><img src="${
-           getImageUrl + d.poster_path
-         }" alt=""></li>
-         <li class="movie-info"><h4>${d.title}</h4> <span>${d.release_date}
-        </span></li>
-         <li class="directors"><h4>Directors</h4><span>Lee Unkrich, Adrian Molina</span></li>
-         <li class="actors"><h4>Actors</h4><span>Anthony Gonzalez, Gael Garcia Bernal</span></li>
-         <li class="my-rate"><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill"></i>
-         </li>
-       </ul> 
-       `;
+          <ul class="rating-item">
+            <li class="poster"><img src="${
+              getImageUrl + d.poster_path
+            }" alt=""></li>
+            <li class="movie-info"><h4>${d.title}</h4> <span>${d.release_date}
+            </span></li>
+            <li class="directors">
+              <h4>Directors</h4>
+              <span>Lee Unkrich, Adrian Molina</span>
+            </li>
+            <li class="actors">
+              <h4>Actors</h4>
+              <span>Anthony Gonzalez, Gael Garcia Bernal</span>
+            </li>
+            <li class="my-rate"><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill active"></i><i class="ri-star-fill"></i>
+            </li>
+          </ul> 
+        `;
         ratingLib.innerHTML += ratingData;
       });
     })
@@ -364,20 +373,16 @@ function showMovies(data) {
       
      `;
     genrePanel.appendChild(genreItem);
-
-    // document.getElementById(id).addEventListener('click', () => {
-    //   console.log(id);
-    // });
   });
 }
 
-// // Search
+// Search
 // const form = document.querySelector('.search-form');
 // const search = document.querySelector('.search');
 
 // form.addEventListener('submit', (e) => {
 //   e.preventDefault();
-
+//   location.href='';
 //   const searchTerm = search.value;
 
 //   if (searchTerm) {
