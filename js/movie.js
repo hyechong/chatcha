@@ -11,13 +11,15 @@ const getLandingImg = async () => {
   fetch(API_URL)
     .then((response) => response.json())
     .then((json) => {
+      const chosenImage =
+        json.results[Math.floor(Math.random() * json.results.length)];
+      // console.log(chosenImage);
       let bgImg;
-      json.results.map((d, i) => {
-        bgImg = `
-       <img src="${getImageUrl + d.backdrop_path}"></img>
-       `;
-        landingImg.innerHTML = bgImg;
-      });
+
+      bgImg = `
+        <img src="${getImageUrl + chosenImage.backdrop_path}"></img>
+      `;
+      landingImg.innerHTML = bgImg;
     })
     .catch((error) => console.log(error));
 };
@@ -64,6 +66,19 @@ const getpopularImg = async () => {
 
 getpopularImg();
 
+function getMovies() {
+  // console.log($('.item'));
+  $('.slider-wrapper').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    nextArrow: $('.next'),
+    prevArrow: $('.prev'),
+  });
+}
+
+// Trailer Overlay
 function trailerOverlay(popularJsonData) {
   const popularData = document.querySelectorAll('.trailer-btn');
   // console.log(popularData);
@@ -160,18 +175,7 @@ function showVideos() {
   });
 }
 
-function getMovies() {
-  // console.log($('.item'));
-  $('.slider-wrapper').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    nextArrow: $('.next'),
-    prevArrow: $('.prev'),
-  });
-}
-
+// Rating Library Section
 const ratingLib = document.querySelector('.rating-wrapper');
 const ratingViewMoreBtn = document.querySelector('.rating-btn');
 
@@ -180,7 +184,7 @@ const getratingImg = async () => {
     .then((response) => response.json())
     .then((json) => {
       let ratingData;
-      json.results.slice(0, 3).map((d, i) => {
+      json.results.slice(0, 12).map((d, i) => {
         //console.log(d);
         ratingData = `
           <ul class="rating-item">
@@ -203,11 +207,34 @@ const getratingImg = async () => {
         `;
         ratingLib.innerHTML += ratingData;
       });
+      loadMore();
     })
     .catch((error) => console.log(error));
 };
 
 getratingImg();
+
+const loadMore = () => {
+  const loadLists = $('.rating-item');
+  loadLists.hide(); // display : none; -> jquery 문법
+
+  loadLists.slice(0, 3).show();
+  $('.library-section .more-btn').on('click', function () {
+    $('.rating-item:hidden').slice(0, 3).show();
+    if ($('.rating-item:hidden').length === 0) {
+      $('.library-section .more-btn').hide();
+      $('.library-section .less-btn').css('display', 'flex');
+    }
+  });
+  $('.library-section .less-btn').on('click', function () {
+    loadLists.hide();
+    loadLists.slice(0, 3).show();
+    if ($('.rating-item:hidden').length > 0) {
+      $('.library-section .more-btn').show();
+      $('.library-section .less-btn').hide();
+    }
+  });
+};
 
 const genres = [
   {

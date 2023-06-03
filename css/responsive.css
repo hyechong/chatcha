@@ -38,6 +38,7 @@
 
   /* Popular Section Style */
   .slider .next, .slider .prev{font-size: 1.75em;}
+  .slider .slider-wrapper .item{margin: 0 .375rem 1.25rem; padding: 15px 10px;}
 
   /* Trailer Overlay Style */
   .trailer-overlay .txt-wrapper{width: 40rem;}
@@ -54,11 +55,12 @@
 @media screen and (max-width: 786px) {
   /* Common Style */
   body{background-color: #27292a;}
-  .container{padding: 0;}
+  .container{padding: 0; margin-top: 78px;}
   .item .item-text h4{font-weight: 500;}
   .section{margin-top: 2.5rem;}
 
   /* Header Section Style */
+  header{background: #27292a; padding: .25rem 2.5rem;}
   header .logo {width: 180px;}
 
   /* Mobile Menu Section Style */
@@ -86,6 +88,10 @@
   .item .item-text{display: none;}
   .section-title h2{font-size: 1.5rem;}
   .wrapper{padding: 0 1.5rem;}
+  .container{margin-top: 70px;}
+
+  /* Header Section Style */
+  header{padding: 0 1.5rem;}
 
   /* Mobile Menu Section Style */
   .mobile-menus{width: 70%;}
@@ -111,15 +117,15 @@
 
 @media screen and (max-width: 478px) {
   /* Common Style */
-  header{padding: 0;}
-  body{background-color: #1f2122;}
+  body,
   .container{background-color: #1f2122;}
   .section{padding: 0; margin-bottom: 4.5rem; margin-top: 1.25rem;}
   .section-title h2{margin-bottom: 1.25rem;}
   .wrapper{padding: 0 1rem;}
   .common-btn{font-size: .75rem;}
-
+  
   /* Header Section Style */
+  header{padding: 0 1rem; background: #1f2122;}
   header .logo {width: 150px;}
 
   /* Mobile Menu Section Style */
@@ -130,7 +136,7 @@
   .landing-section .landing-text{padding: 0 20px;}
 
   /* Popular Section Style */
-  .slider .slider-wrapper .item{margin: 0 5px 1.25rem;}
+  .slider .slider-wrapper .item{margin: 0 .25rem 1.25rem;}
   
   /* Trailer Overlay Style */
   .trailer-overlay .close-icon{top: 1.5rem; right: 1.5rem;}
@@ -141,6 +147,7 @@
   .rating-item{grid-template-columns: 1fr 1.5fr 1fr;}
 
   /* Genre Section Style */
+  .genre-items-wrapper{column-gap: .5rem; row-gap: .75rem;}
   .genres-btn-wrapper .genres-btn{margin: .125rem;}
   .genres-section.section{margin-bottom: 1.5rem;}
 

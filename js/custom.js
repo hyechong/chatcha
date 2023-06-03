@@ -1,5 +1,21 @@
-/* -------- to top button -------- */
+/* -------- Header Hide & Show -------- */
+let prevScrollpos = window.pageYOffset; //재할당되므로 let으로 정의
 const header = document.querySelector('#header');
+
+window.addEventListener('scroll', function () {
+  const currentScrollPos = window.pageYOffset;
+  if (currentScrollPos > 150) {
+    if (prevScrollpos > currentScrollPos) {
+      // show header
+      header.style.top = 0;
+    } else {
+      // hide header
+      header.style.top = -100 + '%';
+    }
+    prevScrollpos = currentScrollPos; // 마우스 이동 후 스크롤 위치값 재할당
+  }
+});
+/* -------- to top button -------- */
 const toTop = document.querySelector('.top');
 
 window.addEventListener('scroll', function () {
