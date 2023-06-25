@@ -15,7 +15,7 @@
   .slider .slider-wrapper .item{padding: 20px 15px;}
 
   /* Genre Section Style */
-  .genre-item{height: auto; max-height: 420px;}
+  .genre-item, .search-result-item{height: auto; max-height: 420px;}
 }
 
 @media screen and (max-width: 980px) {
@@ -48,8 +48,8 @@
   .rating-item{grid-template-columns: 1fr 3fr 1fr;}
 
   /* Genre Section Style */
-  .genre-item{max-height: 450px;}
-  .genre-items-wrapper{grid-template-columns: 1fr 1fr 1fr;}
+  .genre-item,.search-result-item{max-height: 450px;}
+  .genre-items-wrapper, .search-results-wrapper{grid-template-columns: 1fr 1fr 1fr;}
 }
 
 @media screen and (max-width: 786px) {
@@ -67,12 +67,14 @@
   .mobile-menus{width: 60%;}
 
   /* Popular Section Style */
-  .slider .next, .slider .prev{left: -999999px;}
-  .slider .slider-wrapper .item{padding: 0;}
-  .slider .slider-wrapper .item .item-text .rate{display: none;}
-  .slider .slider-wrapper .item .item-image{border-radius: 23px 23px 0 0;}
-  .popular-section .item .item-text{padding: 15px 20px;}
-  .popular-section .item .item-text h4{-webkit-line-clamp: 1;}
+  .slider .next{right: -10px;}
+  .slider .prev{right: 30px;}
+  .slider .next.common-btn,
+  .slider .prev.common-btn{background: none; color: #e75e8d;}
+
+  .slider .next.common-btn:hover,
+  .slider .prev.common-btn:hover{background: none; color: #fff;}
+
 
   /* Trailer Overlay Style */
   .trailer-overlay .close-icon{top: 2rem; right: 3rem;}
@@ -104,6 +106,7 @@
 
   /* Popular Section Style */
   .slider .slider-wrapper .item .item-image{border-radius: 7px;}
+  .slider .slider-wrapper .item{padding: 0;}
 
   /* Trailer Overlay Style */
   .trailer-overlay .close-icon{top: 1.5rem; right: 2rem;}
@@ -136,7 +139,10 @@
   .landing-section .landing-text{padding: 0 20px;}
 
   /* Popular Section Style */
-  .slider .slider-wrapper .item{margin: 0 .25rem 1.25rem;}
+  .slider .next,
+  .slider .prev{left: -9999999999px; display: none;}
+  .slider .slider-wrapper .item{margin: 0 .25rem;}
+  .popular-section.section{margin-bottom: 0;}
   
   /* Trailer Overlay Style */
   .trailer-overlay .close-icon{top: 1.5rem; right: 1.5rem;}
@@ -147,9 +153,9 @@
   .rating-item{grid-template-columns: 1fr 1.5fr 1fr;}
 
   /* Genre Section Style */
-  .genre-items-wrapper{column-gap: .5rem; row-gap: .75rem;}
+  .genre-items-wrapper, .search-results-wrapper{column-gap: .5rem; row-gap: .75rem;}
   .genres-btn-wrapper .genres-btn{margin: .125rem;}
-  .genres-section.section{margin-bottom: 1.5rem;}
+  .genres-section.section, .search-results-section.section{margin-bottom: 1.5rem;}
 
   /* Footer Section Style */
   footer p{padding: 0 0 1.5rem; font-size: .75rem; line-height: 17px;}

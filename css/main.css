@@ -5,7 +5,9 @@
 .common-btn{width: fit-content; padding: 12px 30px; height: 46px; border-radius: 23px; display: flex; align-items: center; text-align: center; background: #e75e8d; color: #fff; font-size: 14px; transition: all .3s;}
 
 @media (hover: hover) { /* 모바일 호버효과 제거 */
-  .common-btn:hover{background: #fff; color: #e75e8d;}
+  .common-btn:hover,
+  .slider .next.common-btn:hover,
+  .slider .prev.common-btn:hover{background: #fff; color: #e75e8d;}
 }
 .section-title h2{font-size: 34px; margin-bottom: 30px; color: #e75e8d;}
 .section-title h2 span{text-decoration: underline; color: #fff;}
@@ -34,6 +36,7 @@ header .logo img {width: 100%;}
 header .search-wrapper{position: relative;}
 header .search-wrapper form{display: flex;align-items: center;}
 header .search-wrapper input{height: 46px; border-radius: 23px; color: #666; font-size: 14px; padding: 0px 15px 0px 45px;} 
+
 header .search-wrapper i{position: absolute; color: #666; left: 20px; font-size: 16px; line-height: 0;}
 header .gnb ul{display: flex; align-items: center; text-align: center;}
 header .gnb ul li{padding: 0 1.25rem;}
@@ -121,7 +124,7 @@ iframe{width:560px; height:315px;}
 .genres-btn-wrapper .genres-btn{margin: .25rem;}
 .genres-btn-wrapper .genres-btn.on{background: #fff; color: #e75e8d;}
 
-.genre-items-wrapper{width: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: .75rem; row-gap: 1.25rem; margin: 0; padding-top: 30px;}
+.genre-items-wrapper, .search-results-wrapper{width: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: .75rem; row-gap: 1.25rem; margin: 0; padding-top: 30px;}
 
 
 /* footer section */
@@ -132,3 +135,7 @@ footer a:hover{color: #e75e8d;}
 
 /* top button style */
 .top button{color: #fff;display: flex; align-items: center; text-align: center; position: fixed; right: 30px; bottom: 30px; font-size: 30px; padding: 0 8px; z-index: 9999;}
+
+/* Search Result Section style */
+.search-results-section{margin-top: 0;}
+.search-results-wrapper{padding-top: 0;}

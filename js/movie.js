@@ -2,7 +2,7 @@ const API_KEY = 'api_key=bb7689db4fddee63af4a1305d8ed162d';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const getImageUrl = 'https://image.tmdb.org/t/p/original';
-// const searchUrl = BASE_URL + '/search/movies?' + API_KEY;
+const searchUrl = BASE_URL + '/search/movies?' + API_KEY;
 
 // Landing Section
 const landingImg = document.querySelector('.landing-image');
@@ -50,7 +50,9 @@ const getpopularImg = async () => {
          <div class="item-text">
            <h4>${d.title}</h4>
            <div class="rate">
-             <i class="ri-star-fill"><span>${d.vote_average}</span></i>
+             <i class="ri-star-fill"><span>${d.vote_average.toFixed(
+               2
+             )}</span></i>
              <i class="ri-eye-fill"><span>${Math.floor(d.popularity)}</span></i>
            </div>
          </div>
@@ -67,7 +69,6 @@ const getpopularImg = async () => {
 getpopularImg();
 
 function getMovies() {
-  // console.log($('.item'));
   $('.slider-wrapper').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -81,12 +82,9 @@ function getMovies() {
 // Trailer Overlay
 function trailerOverlay(popularJsonData) {
   const popularData = document.querySelectorAll('.trailer-btn');
-  // console.log(popularData);
-  // console.log(popularJsonData);
   popularData.forEach((data, i) => {
     data.addEventListener('click', function (e) {
       e.preventDefault();
-      // alert(popularJsonData.results[i].id);
       openTrailerOverlay(data);
     });
   });
@@ -395,7 +393,7 @@ function showMovies(data) {
         <h4>${title}</h4>
         <div class="rate">
           <span>${release_date}</span>
-        <i class="ri-star-fill"><span>${vote_average}</span></i> 
+        <i class="ri-star-fill"><span>${vote_average.toFixed(2)}</span></i> 
       </div>
       
      `;
@@ -404,15 +402,23 @@ function showMovies(data) {
 }
 
 // Search
-// const form = document.querySelector('.search-form');
-// const search = document.querySelector('.search');
+const searchBtn = document.querySelector('.search-btn');
+const mobileSearchBtn = document.querySelector('.mobile-search-btn');
 
-// form.addEventListener('submit', (e) => {
-//   e.preventDefault();
-//   location.href='';
-//   const searchTerm = search.value;
+searchBtn.addEventListener('click', function () {
+  const keyValue = document.querySelector('.search-input').value;
+  if (keyValue == '' || null || undefined) {
+    alert('Please insert search value!');
+  } else {
+    location.href = `/chatcha/search.html?search=${keyValue}`;
+  }
+});
 
-//   if (searchTerm) {
-//     getMovieDatas(searchUrl + '&query=' + searchTerm);
-//   }
-// });
+mobileSearchBtn.addEventListener('click', function () {
+  const keyValue = document.querySelector('.mobile-search-input').value;
+  if (keyValue == '' || null || undefined) {
+    alert('Please insert search value!');
+  } else {
+    location.href = `/chatcha/search.html?search=${keyValue}`;
+  }
+});

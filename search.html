@@ -43,9 +43,9 @@
        <div class="gnb">
        <ul>
          <li class="on"><a href="/chatcha/index.html">Home</a></li>
-         <li><a href="#popular">Popular</a></li>
-         <li><a href="#ratings">Ratings</a></li>
-         <li><a href="#genres">Genres</a></li>
+         <li><a href="/chatcha/index.html#popular">Popular</a></li>
+         <li><a href="/chatcha/index.html#ratings">Ratings</a></li>
+         <li><a href="/chatcha/index.html#genres">Genres</a></li>
          <li class="user"><a class="common-btn" href="#">Profile <img src="images/profile.jpg" alt=""></a></li>
          <li class="menu-icon"><a href="#"><i class="ri-menu-line"></i></a></li>
        </ul>
@@ -69,13 +69,12 @@
               <input class="mobile-search-input search-input" type="text" placeholder="Search" name="search" value="">
             </form>
           </div>
-         </div>
          <div class="gnb">
            <ul>
              <li class="on"><a href="/chatcha/index.html">Home</a></li>
-             <li><a href="#popular">Popular</a></li>
-             <li><a href="#ratings">Ratings</a></li>
-             <li><a href="#genres">Genres</a></li>
+             <li><a href="/chatcha/index.html#popular">Popular</a></li>
+             <li><a href="/chatcha/index.html#ratings">Ratings</a></li>
+             <li><a href="/chatcha/index.html#genres">Genres</a></li>
              <!-- <li class="menu-icon"><a href="#"><i class="ri-menu-line"></i></a></li> -->
            </ul>
          </div>
@@ -86,43 +85,22 @@
    </div>
 
     <div class="container">
-     <!-- Landing Section -->
-     <section class="landing-section">
-       <!-- <div class="landing-video">
-         <video loop autoplay muted src="images/vid1.mp4"></video>
-       </div> -->
-       <div class="landing-image">
-      
-       </div>
-       <div class="landing-text">
-         <p>Welcome To Chatcha</p>
-         <h2><span>BROWSE</span> OUR POPULAR<br> CONTENTS HERE</h2>
-         <a href="#" class="common-btn landing-btn">Browse Now</a>
-       </div>
-     </section>
 
+      <!-- Search results Section -->
+      <section class="search-results-section section" id="search-results">
+        <div class="section-title">
+          <h2><span>Search</span> Results</h2>
+        </div>
+        <div class="search-results-wrapper">
+        </div>
+      </section>
+ 
 
-     <!-- Most Popular Slider Section -->
-     <section class="popular-section section" id="popular">
-       <div class="section-title">
-         <h2><span>Most Popular</span> Right Now</h2>
-       </div>
-      
-       <div class="slider">
-         <i class="ri-arrow-left-s-line prev common-btn"></i>
-         <i class="ri-arrow-right-s-line next common-btn"></i>
-         <div class="slider-wrapper">
-         </div>
-       </div>
-
-
-       <!-- <div class="more-btn"><a href="#" class="common-btn">View More</a></div> -->
-     </section>
 
      <!-- Trailer Overlay -->
      <div id="trailer-overlay-wrapper">
       <div class="trailer-overlay">
-        <a href="#" class="close-icon"><i class="ri-close-line"></i></a>
+        <div class="close-icon"><i class="ri-close-line"></i></div>
         <div class="video-wrapper">
           <video src=""></video>
         </div>
@@ -133,39 +111,12 @@
           </div>
           <div class="overview">
             <p>
-              
             </p> 
           </div>
         </div>
       </div>
      </div>
-
-
-     <!-- Rating Library Section -->
-     <section class="library-section section" id="ratings">
-       <div class="section-title">
-         <h2><span>Your Rating</span> Library</h2>
-       </div>
-       <div class="rating-wrapper">
-       </div>
-       <div class="more-btn"><button class="common-btn">View More</button></div>
-       <div class="less-btn"><a href="#ratings" class="common-btn">View Less</a></div>
-     </section>
-
-
-     <!-- Genres Section -->
-     <section class="genres-section section" id="genres">
-       <div class="section-title">
-         <h2><span>Genre</span> Filter</h2>
-       </div>
-       <div class="genres-btn-wrapper">
-       </div>
-       <div class="genre-items-wrapper">
-       </div>
-     </section>
-
-
-   </div>
+    </div>
 
 
    <!-- Footer -->
@@ -180,20 +131,13 @@
    <button class="common-btn"><i class="ri-arrow-up-s-line"></i></button>
  </div>
 
-
- <script>
-   const url = document.location.href;
-   if(url==='http://ckgpwl2.cafe24.com/chatcha/'){
-     location.href='http://ckgpwl2.cafe24.com/chatcha/index.html'
-   }
- </script>
   <!-- Slick Slider Link -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
  <script src="/chatcha/js/custom.js"></script>
- <script src="/chatcha/js/movie.js"></script>
+ <script src="/chatcha/js/search.js"></script>
 
 
 
